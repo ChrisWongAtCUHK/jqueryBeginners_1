@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Add and remove list item</title>
+		<script src="jquery-2.1.1.js" type="text/javascript"></script>
+		<script type=text/javascript>
+			$(function(){
+				var i = $('li').size() + 1;
+
+				$('#add').click(function(){
+					$('<li>' + i + '</li>').appendTo('ul');
+					i++;
+				});
+
+				$('#remove').click(function(){
+					$('li:last').remove();
+					i--;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<a href="#" id="add">Add List Item</a><br />
+		<a href="#" id="remove">Remove List Item</a>
+	</body>
+</html>
+
