@@ -8,12 +8,13 @@
 				background: red;
 				width:	300px;
 				height: 300px;
+				display: none;
 			}
 		</style>
 		<script type=text/javascript>
 			$(function(){
 				$('a').click(function() {
-					$('#box').css('color', 'blue');
+					$('#box').show(5000);
 				});
 			});
 		</script>
