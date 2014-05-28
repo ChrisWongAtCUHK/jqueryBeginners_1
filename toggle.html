@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title></title>
+		<script src="jquery-2.1.1.js" type="text/javascript"></script>
+		<style type="text/css">
+			#box1
+			{
+				background: red;
+				width:	300px;
+				height: 300px;
+			}
+			
+			#box2
+			{
+				background: green;
+				width:	300px;
+				height: 300px;
+			}
+
+			#box3
+			{
+				background: blue;
+				width:	300px;
+				height: 300px;
+			}
+
+			.border
+			{
+				border: 5px solid black;
+			}
+		</style>
+		<script type=text/javascript>
+			$(function(){
+				$('#a1').click(function() {
+					$('#box1').toggle();
+				});
+				
+				$('#a2').click(function() {
+					$('#box2').toggle(5000);
+				});
+
+				$('#a3').click(function() {
+					$('#box3').toggleClass('border');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box1" /></div>
+		<a href="#" id="a1">Click Me!</a>
+		<div id="box2" /></div>
+		<a href="#" id="a2">Click Me!</a>
+		<div id="box3" /></div>
+		<a href="#" id="a3">Click Me!</a>
+	</body>
+</html>
+
