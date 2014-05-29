@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Day 9: Resizing Text</title>
+		<script src="jquery-2.1.1.js" type="text/javascript"></script>
+		<script type=text/javascript>
+			$(function(){
+				$('a').click(function(){
+					var os = $('p').css('font-size');
+					var num = parseFloat(os, 10);
+					var uom = os.slice(-2);
+				
+					if(this.id == 'larger'){
+						$('p').css('font-size', num * 1.4 + uom);
+					} else if(this.id == 'smaller'){
+						$('p').css('font-size', num / 1.4 + uom);
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<a href="#" id="larger">Larger</a><br />
+		<a href="#" id="smaller">Smaller</a>
+		<p>
+		 Do just once what others say you can’t do, and you will never pay attention to their limitations again.
+		</p>
+	</body>
+</html>
+
