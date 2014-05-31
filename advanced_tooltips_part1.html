@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Day 12: Advanced Tooltips: Part 1</title>
+		<script src="jquery-2.1.1.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="style.css" />
+		<script type=text/javascript>
+			$(function(){
+					$('a').hover(function(evt){
+					
+						var html = '<div id="info">';
+							html += '<h4>Description</h4>';
+							html += '<img src="front.png" alt="front" />';
+							html += '<p>Squirtle, known as Zenigame (ゼニガメ?) in Japan, is a Pokémon species in Nintendo and Game Freak\'s Pokémon franchise. It was originally conceived by Game Freak\'s character development team and finalized by Ken Sugimori. Its name was changed from Zenigame to Squirtle during the English localization of the series in order to give it a "clever and descriptive name." Its English name is a combination of squirt and turtle. In animated appearances, Squirtle is voiced in Japanese by Rikako Aikawa and in English localizations by Eric Stuart. Squirtle, in the anime, never evolved for reasons never truly explained by the creators.</p>';
+							html += '</div>';
+
+						$('#container').append(html).children('#info').hide().fadeIn(400);
+						$('#info').css('top', evt.pageY - 20)
+								  .css('left', evt.pageX + 40);
+					}, function(){
+						//mouse out
+						$('#info').remove();
+					});
+
+					$('a').mousemove(function(evt){
+						$('#info').css('top', evt.pageY - 20)
+								  .css('left', evt.pageX + 40);
+					});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<a href="#" >Squirtle</a>
+		</div>
+	</body>
+</html>
+
