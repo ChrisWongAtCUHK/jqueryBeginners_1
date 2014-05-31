@@ -6,21 +6,41 @@
 		<style type="text/css">
 			a img {
 				border: none;
+				background: lime;
+			}
+
+			#largeImage {
+				position: absolute;
+				padding: .5em;
+				background: #e3e3e3;
+				border: 1px solid #0000ff;
 			}
 		</style>
 		<script type=text/javascript>
 			$(function(){
+
+					var offsetX = 20;
+					var offsetY = 20;
+
 					$('a').hover(function(e){
 						// mouse on
 						var href = $(this).attr('href');
 						$('<img id="largeImage" src="' + href + '" alt="image" />')
-						.css('top', e.pageY)
-						.css('left', e.pageX)
+						.css('top', e.pageY + offsetY)
+						.css('left', e.pageX + offsetX)
 						.appendTo('body');
 					}, function(){
 						// mouse off
 						$('#largeImage').remove();
 					});
+
+					$('a').mousemove(function(e){
+						$('#largeImage')
+						.css('top', e.pageY + offsetY)
+						.css('left', e.pageX + offsetX);
+							
+					});
+
 			});
 		</script>
 	</head>
